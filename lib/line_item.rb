@@ -7,7 +7,7 @@ class LineItem
   NON_TAXABLE = %w[book chocolate chocolates pills].freeze
   IMPORTED = %w[imported].freeze
 
-  attr_reader :name, :quantity
+  attr_reader :name, :quantity, :shelf_price
 
   def initialize(quantity, name, shelf_price)
     @quantity = quantity

@@ -4,7 +4,7 @@ require './lib/receipt'
 require './lib/line_item'
 
 RSpec.describe Receipt do
-  describe '#data' do
+  describe '#formatted_output' do
     context 'when non-imported items are purchased' do
       let(:line_item1) { LineItem.new(1, 'book', 12.49) }
       let(:line_item2) { LineItem.new(1, 'music cd', 14.99) }
@@ -16,7 +16,7 @@ RSpec.describe Receipt do
       let(:receipt) { Receipt.new([line_item1, line_item2, line_item3]) }
 
       it 'returns the receipt with sales tax calculated' do
-        expect(receipt.data).to eq expected_output
+        expect(receipt.formatted_output).to eq expected_output
       end
     end
 
@@ -31,7 +31,7 @@ RSpec.describe Receipt do
       let(:receipt) { Receipt.new([line_item1, line_item2]) }
 
       it 'adds import duty' do
-        expect(receipt.data).to eq expected_output
+        expect(receipt.formatted_output).to eq expected_output
       end
     end
   end
@@ -48,7 +48,7 @@ RSpec.describe Receipt do
     let(:receipt) { Receipt.new([line_item1, line_item2, line_item3, line_item4]) }
 
     it 'returns the receipt with appropriate sales tax and import duty' do
-      expect(receipt.data).to eq expected_output
+      expect(receipt.formatted_output).to eq expected_output
     end
   end
 end

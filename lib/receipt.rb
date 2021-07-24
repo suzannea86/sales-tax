@@ -6,7 +6,7 @@ class Receipt
     @line_items = line_items
   end
 
-  def data
+  def formatted_output
     receipt_data = ''
     total_sales_tax = 0
     total_cost = 0
