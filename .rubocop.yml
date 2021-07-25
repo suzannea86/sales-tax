@@ -1,0 +1,11 @@
+Metrics/BlockLength:
+  Max: 80
+
+Metrics/LineLength:
+  Max: 185
+
+Metrics/MethodLength:
+  Max: 15
+
+AllCops:
+    NewCops: enable
